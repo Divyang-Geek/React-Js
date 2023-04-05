@@ -1,0 +1,33 @@
+.accordions {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    gap: 15px;
+}
+
+.accordion_description {
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    color: #fff;
+    line-height: 28px;
+    letter-spacing: 1px;
+    border-top: none;
+    border-radius: 5px;
+}
+
+.accordion_title {
+    display: block;
+    padding: 20px 30px;
+    margin: 0;
+    background: #e35555;
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}

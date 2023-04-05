@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+}
+
+#root {
+    background: #429ebd;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-size: xx-large;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.plusBtn,
+.itemRemoveBtn {
+    display: inline-block;
+    background: darkcyan;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 30px;
+    appearance: none;
+}
+
+.itemRemoveBtn {
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    background: #429ebd;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.formSec,
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.formSec h2 {
+    margin: 0;
+}
+
+.formSec input {
+    width: 500px;
+    display: block;
+    font-size: 18px;
+    padding: 15px;
+    height: 60px;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+    color: white;
+}
+
+input {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    font-family: "Poppins";
+    font-size: 20px;
+    color: black;
+    border-radius: 10px;
+    appearance: none;
+    border: none;
+}
+
+.todoForm {
+    display: flex;
+    gap: 20px;
+}
+
+.todoBox {
+    padding: 30px;
+    background: #f7ad19;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 500px;
+    max-width: 100%;
+}
+
+.itemListBx {
+    display: flex;
+    gap: 15px;
+}
+.toDoLists {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+
+.toDoLists li {
+    display: flex;
+    gap: 20px;
+}
