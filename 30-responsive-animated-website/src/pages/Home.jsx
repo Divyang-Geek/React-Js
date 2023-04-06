@@ -1,9 +1,11 @@
+import CommonBanner from "../components/CommonBanner";
+
 const Home = () => {
     return (
         <>
-            <h1>Welcome To Home</h1>
+            <CommonBanner h1Title="Let's Build Your" btnText="Service" btnUrl="/service"/>
         </>
-     );
-}
+    );
+};
 
 export default Home;

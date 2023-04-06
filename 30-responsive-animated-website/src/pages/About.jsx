@@ -1,9 +1,11 @@
+import CommonBanner from "../components/CommonBanner";
+
 const About = () => {
     return (
         <>
-            <h1>Welcome To About</h1>
+            <CommonBanner h1Title="We Always With You For" btnText="Contact us" btnUrl="/contact"/>
         </>
-     );
-}
+    );
+};
 
 export default About;

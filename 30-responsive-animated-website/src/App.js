@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Service from "./pages/Service";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                 {/* If the Page Doesn't Exist, That Time It Will Redirect To the Home Page */}
                 <Route path={"*"} element={<Navigate to={"/"} />} />
             </Routes>
+            <Footer />
         </>
     );
 }
