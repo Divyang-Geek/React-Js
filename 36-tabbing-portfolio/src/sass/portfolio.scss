@@ -1,18 +1,13 @@
-$theme-colors: (
-    "info": tomato,
-    "danger": teal,
-    "dark": rgb(28, 31, 31),
-);
+.portfolio_sec {
+    min-height: 100vh;
+    padding: 5rem 2rem;
+    background-color: cornsilk;
 
-@import "~bootstrap/scss/bootstrap";
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-html,
-body {
-    overflow-x: hidden !important;
+    .card {
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
 }
