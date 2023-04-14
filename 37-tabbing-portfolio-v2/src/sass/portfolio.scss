@@ -1,0 +1,13 @@
+.portfolio_sec {
+    min-height: 100vh;
+    padding: 5rem 2rem;
+    background-color: cornsilk;
+
+    .card {
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
