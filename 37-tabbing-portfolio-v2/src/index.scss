@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 $theme-colors: (
     "primary": tomato,
 );
+
+$primary-font: 'Anton', sans-serif;
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -21,7 +23,7 @@ body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: "Teko", sans-serif;
+    font-family: $primary-font;
 }
 
 code {

@@ -17,8 +17,6 @@ const Portfolio = () => {
     // This State For Category
     const [portCat, setPortCat] = useState(portfolioCat);
 
-
-
     // This filter function, this is check if same category in data then display in the column
     const filterItem = (cate) => {
         // console.log(cate);
@@ -30,11 +28,17 @@ const Portfolio = () => {
         }
 
         // This Is For Other All Data Without All
-        const updatedItems = PortfolioData.filter((curEle) => {
-            return curEle.pCategory === cate;
-        });
+        // const updatedItems = PortfolioData.filter((curEle) => {
+        //     return curEle.pCategory === cate;
+        // });
 
-        setItems(updatedItems);
+        // setItems(updatedItems);
+
+        setItems(() => {
+            return PortfolioData.filter((curEle) => {
+                return curEle.pCategory === cate;
+            });
+        });
     };
 
     return (
@@ -51,13 +55,12 @@ const Portfolio = () => {
                             <div className="main_tabs">
                                 <div className="tabs">
                                     {/* This Is Portfolio Tab Menu */}
-                                    <PortfolioTabMenu filterItemP={filterItem} portCatP={portCat}  />
+                                    <PortfolioTabMenu filterItemP={filterItem} portCatP={portCat} />
 
                                     <div className="tab_content">
                                         <Row className="g-5">
                                             {items.map((elem) => {
                                                 const { pId } = elem;
-
                                                 return (
                                                     <Col lg={4} key={pId}>
                                                         <PortfolioCard {...elem} />

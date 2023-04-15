@@ -6,6 +6,7 @@ const PortfolioTabMenu = ({ filterItemP, portCatP }) => {
     const [portActive, setPortActive] = useState("All");
 
     const TabButton = (elem) => {
+        // console.log(elem);
         filterItemP(elem);
         setPortActive(elem);
     };
@@ -13,7 +14,6 @@ const PortfolioTabMenu = ({ filterItemP, portCatP }) => {
         <>
             <Stack direction="horizontal" gap={3} className="justify-content-center flex-wrap tab mb-5">
                 {portCatP.map((elem, index) => {
-                    console.log(elem);
                     return (
                         <Button variant="outline-primary" size="lg" onClick={() => TabButton(elem)} className={portActive === elem ? "active" : ""} key={index}>
                             {elem}
