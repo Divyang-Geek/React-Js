@@ -1,0 +1,11 @@
+@mixin d_flex($dis_flex: flex, $align: center, $justify: center) {
+    display: $dis_flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin list_reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
