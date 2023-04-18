@@ -2,26 +2,4 @@
 
 @import "~bootstrap/scss/bootstrap";
 
-@import "./sass/variables";
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: $primary_font;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
+@import "./sass/common";

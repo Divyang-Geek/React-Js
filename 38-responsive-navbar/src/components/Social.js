@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { TbBrandFacebook, TbBrandInstagram, TbBrandLinkedin } from "react-icons/tb";
+import "../sass/social.scss";
 
 const Social = () => {
     return (

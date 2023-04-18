@@ -9,3 +9,48 @@
     padding: 0;
     list-style: none;
 }
+
+@mixin media_screen($media_min_max: max, $media_size) {
+    @media screen and (#{$media_min_max}-width: $media_size) {
+        @content;
+    }
+}
+
+@mixin back_img($back_repeat: no-repeat, $back_size: cover, $back_position_x: 50%, $back_position_y: 50%, $back_image: initial) {
+    background: {
+        repeat: $back_repeat;
+        size: $back_size;
+        position: $back_position_x $back_position_y;
+        image: $back_image;
+    }
+}
+
+@mixin font($f_size, $f_line, $f_weight: normal, $f_family: $primary_font, $f_color: $dark_green) {
+    font-size: $f_size;
+    line-height: $f_line;
+    font-weight: $f_weight;
+    font-family: $f_family;
+    color: $f_color;
+}
+
+@mixin before_after($content: "", $position: absolute, $top_bottom: top, $left_right: left, $top_bottom_val: 0, $left_right_val: 0, $width: 100%, $height: 100%) {
+    content: $content;
+    position: $position;
+    #{$top_bottom}: $top_bottom_val;
+    #{$left_right}: $left_right_val;
+    width: $width;
+    height: $height;
+}
+
+@mixin position($position: absolute, $top_bottom: top, $left_right: left, $top_bottom_val: 0, $left_right_val: 0, $transform_prop: translate, $translate_x: 0, $translate_y: 0, $z_index: initial) {
+    position: $position;
+    #{$top_bottom}: $top_bottom_val;
+    #{$left_right}: $left_right_val;
+    transform: #{$transform_prop }($translate_x, $translate_y);
+    z-index: $z_index;
+}
+
+@mixin w_h($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+}

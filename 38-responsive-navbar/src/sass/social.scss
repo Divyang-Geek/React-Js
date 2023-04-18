@@ -1,0 +1,21 @@
+@import "variables";
+@import "mixins";
+
+
+.social {
+    height: 100%;
+    ul {
+        @include list_reset;
+        @include d_flex($justify: flex-end);
+        height: 100%;
+
+        li {
+            margin-inline: 10px;
+
+            a {
+                font-size: 25px;
+                color: $white_color;
+            }
+        }
+    }
+}

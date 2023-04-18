@@ -2,10 +2,17 @@
 $primary_font: "Questrial", sans-serif;
 
 // Colors
-$primary_color: #053F5C;
-$secondary_color: #F7AD19;
-$white_color: #FFFFFF;
+$primary_color: #053f5c;
+$secondary_color: #f7ad19;
+$white_color: #ffffff;
 $black_color: #000000;
 
 // Transitions
 $transition: 0.5s all;
+
+// Breakpoints
+$breakpoints: (
+    "small": 767px,
+    "medium": 992px,
+    "large": 1200px,
+) !default;

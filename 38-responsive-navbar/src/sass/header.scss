@@ -6,8 +6,16 @@
     background: $secondary_color;
     position: relative;
 
+    @include media_screen($media_size: 991px) {
+        height: 80px;
+    }
+
     .container {
         height: 100%;
+
+        @include media_screen($media_size: 991px) {
+            max-width: 100%;
+        }
 
         .row {
             height: 100%;
@@ -17,45 +25,51 @@
             }
         }
     }
-}
 
-.site_logo {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
+    .site_logo {
+        @include media_screen($media_size: 991px) {
+            padding-left: 15px;
+        }
 
-    a {
-        display: inline-block;
-        width: 120px;
-
-        img {
+        a {
+            width: 100px;
         }
     }
 }
 
-.main_nav {
+.site_navigation {
     height: 100%;
+    @include d_flex($justify: flex-end);
 
-    ul {
+    .main_nav {
         height: 100%;
-    }
-}
+        flex: 1;
 
-.social {
-    height: 100%;
-    ul {
-        @include list_reset;
-        @include d_flex($justify: flex-end);
-        height: 100%;
+        nav {
+            height: 100%;
 
-        li {
-            margin-inline: 10px;
+            @include media_screen($media_size: 991px) {
+                @include position($position: fixed, $translate_x: 0, $translate_y: 0, $z_index: 99);
+                @include w_h($width: 100vw, $height: 100vh);
+                background-color: $secondary_color;
+                display: none;
+                padding-top: 12vh;
 
-            a {
-                font-size: 25px;
-                color: $white_color;
+                &.active {
+                    display: block;
+                }
             }
+
+            ul {
+                height: 100%;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .social {
+        @include media_screen($media_size: 991px) {
+            display: none;
         }
     }
 }

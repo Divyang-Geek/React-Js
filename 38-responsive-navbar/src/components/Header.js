@@ -10,14 +10,14 @@ const Header = () => {
             <header className="main_header">
                 <Container>
                     <Row>
-                        <Col lg={2}>
+                        <Col lg={2} xs={3}>
                             <Logo />
                         </Col>
-                        <Col lg={8}>
-                            <Navbar />
-                        </Col>
-                        <Col lg={2}>
-                            <Social />
+                        <Col lg={10} xs={9}>
+                            <div className="site_navigation">
+                                <Navbar />
+                                <Social />
+                            </div>
                         </Col>
                     </Row>
                 </Container>

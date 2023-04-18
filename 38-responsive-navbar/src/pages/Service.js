@@ -1,6 +1,6 @@
 import Banner from "../components/Banner";
 
-const Home = ({ pageName }) => {
+const Service = ({pageName}) => {
     return (
         <>
             <Banner pageName={pageName} />
@@ -8,4 +8,4 @@ const Home = ({ pageName }) => {
     );
 };
 
-export default Home;
+export default Service;
