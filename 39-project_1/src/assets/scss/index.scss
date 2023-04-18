@@ -1,0 +1,31 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import "variables";
+@import "mixins";
+
+// common
+@import "./common";
+
+// card
+.card {
+    @include radius();
+
+    .card_img {
+        height: 250px;
+        position: relative;
+
+        img {
+            @include w_h();
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    &_number {
+        @include position($l_r: right, $t_b_val: 15px, $l_r_val: 15px, $z_ind: 1);
+        @include w_h($w: 30px, $h: 30px);
+        @include d_flex();
+        @include radius();
+        background-color: $secondary_color;
+        color: $white_color;
+    }
+}
