@@ -25,7 +25,7 @@
     }
 }
 
-@mixin font($f_size, $f_line, $f_weight: normal, $f_family: $primary_font, $f_color: $dark_green) {
+@mixin font($f_size, $f_line, $f_weight: normal, $f_family: $primary_font, $f_color: $primary_color) {
     font-size: $f_size;
     line-height: $f_line;
     font-weight: $f_weight;
@@ -33,13 +33,15 @@
     color: $f_color;
 }
 
-@mixin before_after($cont: "", $pos: absolute, $t_b: top, $t_b_val: 0, $l_r: left, $l_r_val: 0, $w: 100%, $h: 100%) {
+@mixin before_after($cont: "", $pos: absolute, $t_b: top, $t_b_val: 0, $l_r: left, $l_r_val: 0, $trans_prop: translate, $trans_x: 0, $trans_y: 0, $w: 100%, $h: 100%, $z_ind: initial) {
     content: $cont;
     position: $pos;
     #{$t_b}: $t_b_val;
     #{$l_r}: $l_r_val;
+    transform: #{$trans_prop }($trans_x, $trans_y);
     width: $w;
     height: $h;
+    z-index: $z_ind;
 }
 
 @mixin position($pos: absolute, $t_b: top, $t_b_val: 0, $l_r: left, $l_r_val: 0, $trans_prop: translate, $trans_x: 0, $trans_y: 0, $z_ind: initial) {
