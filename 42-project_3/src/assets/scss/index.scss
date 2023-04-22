@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import "variables";
+@import "mixins";
+
+// common
+@import "./common";
+
+// weather
+.weather_card_icon {
+    font-size: 50px;
+}
+
+.temp_box {
+    background: #3151ab;
+    @include d_flex;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.date_box {
+    background: #8b3478;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.weather_result_extra_icon {
+    font-size: 2rem;
+}
