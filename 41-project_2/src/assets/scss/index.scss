@@ -1,0 +1,82 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import "variables";
+@import "mixins";
+
+// common
+@import "./common";
+
+// card
+.card {
+    @include radius;
+
+    .card_img {
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            @include w_h;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &_number {
+        @include position($l_r: right, $t_b_val: 15px, $l_r_val: 15px, $z_ind: 1);
+        @include w_h($w: 30px, $h: 30px);
+        @include d_flex;
+        @include radius;
+        background-color: $secondary_color;
+        color: $white_color;
+    }
+
+    &_content {
+        position: relative;
+        z-index: 2;
+        padding: 0 30px 30px;
+        margin-top: -17px;
+
+        &_inr {
+            padding-top: 15px;
+        }
+    }
+
+    &_category {
+        @include d_flex($dis_flex: inline-flex);
+        @include radius;
+        padding: 5px 15px;
+        background-color: $secondary_color;
+        color: $white_color;
+    }
+}
+
+// Menu Tab
+.menu_tab {
+    @include d_flex;
+    margin-bottom: 30px;
+
+    ul {
+        @include d_flex;
+        background-color: $secondary_color;
+        @include radius;
+        overflow: hidden;
+        padding: 15px 30px;
+
+        li {
+            position: relative;
+            padding: 10px 15px 10px;
+            border-bottom: 3px solid $primary_color;
+            cursor: pointer;
+            @include font($f_size: 20px, $f_line: 1.5, $f_weight: 500, $f_color: $white_color);
+            transition: $transition;
+
+            &:hover,
+            &.active {
+                color: $secondary_color;
+                border-bottom-color: $white_color;
+                background-color: $white_color;
+            }
+        }
+    }
+}
