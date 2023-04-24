@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Form, Stack } from "react-bootstrap";
 import { AiOutlinePlus, AiOutlineEdit } from "react-icons/ai";
 
-const TodoAdd = ({ addItem, isEditItem, toggleBtn }) => {
+const TodoAdd = ({ addItem, isEditItem, toggleBtn, setItemData, itemData, setIsEditItem, setToggleBtn }) => {
     // When Type On Input
     const [inputData, setInputData] = useState("");
 
@@ -14,9 +14,7 @@ const TodoAdd = ({ addItem, isEditItem, toggleBtn }) => {
     };
 
     // When Click On Button, Add Data In Array
-    const addEvent = (e) => {
-        e.preventDefault();
-
+    const addEvent = () => {
         if (!inputData) {
             alert("Please Enter The Data");
         } else {
@@ -36,17 +34,40 @@ const TodoAdd = ({ addItem, isEditItem, toggleBtn }) => {
     };
 
     // Edit
-    console.log(isEditItem);
-    console.log(toggleBtn);
-    // if(toggleBtn === true) {
-    //     setInputData(isEditItem.name)
-    // }
 
-    // useEffect(() => {
-    //     if (toggleBtn === true) {
-    //         setInputData(isEditItem.name);
-    //     }
-    // });
+    // console.log(isEditItem);
+    // console.log(toggleBtn);
+
+    const editEvent = () => {
+        if (!inputData) {
+            alert("Please Enter The Data");
+        } else if (inputData && toggleBtn) {
+            // console.log(inputData);
+
+            setItemData(
+                itemData.map((ele) => {
+                    // console.log(ele);
+                    // console.log(isEditItem);
+
+                    if (ele.id === isEditItem.id) {
+                        return { ...ele, name: inputData };
+                    }
+                    return ele;
+                })
+            );
+            setIsEditItem(null);
+            setInputData("");
+            setToggleBtn(false);
+        }
+    };
+
+    useEffect(() => {
+        // console.log(isEditItem);
+
+        if (toggleBtn === true && !inputData) {
+            setInputData(isEditItem.name);
+        }
+    });
 
     return (
         <>
@@ -55,7 +76,7 @@ const TodoAdd = ({ addItem, isEditItem, toggleBtn }) => {
                     <Stack gap={1} direction="horizontal">
                         <Form.Control size={"lg"} type="text" placeholder="Add Your List" value={inputData} onChange={inpEvent} />
                         {toggleBtn ? (
-                            <Button variant="success" size={"lg"} type="submit" onClick={addEvent}>
+                            <Button variant="success" size={"lg"} type="submit" onClick={editEvent}>
                                 <AiOutlineEdit />
                             </Button>
                         ) : (

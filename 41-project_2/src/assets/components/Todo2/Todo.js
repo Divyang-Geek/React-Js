@@ -77,7 +77,7 @@ const Todo = () => {
                     </Row>
                     <Row>
                         <Col lg={6} className="mx-auto">
-                            <TodoAdd addItem={addItem} isEditItem={isEditItem} toggleBtn={toggleBtn} />
+                            <TodoAdd addItem={addItem} isEditItem={isEditItem} toggleBtn={toggleBtn} setItemData={setItemData} itemData={itemData} setToggleBtn={setToggleBtn} setIsEditItem={setIsEditItem}/>
                             <TodoResult itemData={itemData} deleteEachItem={deleteEachItem} deleteAllItems={deleteAllItems} editItem={editItem} />
                         </Col>
                     </Row>
