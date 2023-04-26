@@ -34,7 +34,6 @@ const UseEffect = () => {
                             <h2>Actual Size Of Window Height Is: {windowHeightCount}px</h2>
                         </Col>
                     </Row>
-
                 </Container>
             </div>
         </>
