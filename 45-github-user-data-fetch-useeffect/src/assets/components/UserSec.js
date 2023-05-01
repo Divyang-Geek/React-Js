@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import UserCard from "./UserCard";
+import UserLoader from "./UserLoader";
 
 const UserSec = () => {
     const [users, setUsers] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const fetchGithubUserData = async () => {
         try {
@@ -12,6 +14,7 @@ const UserSec = () => {
             // Fetch Api
             const resp = await fetch(ApiUrl);
             const data = await resp.json();
+            setLoading(false);
             setUsers(data);
         } catch (error) {
             console.log(error);
@@ -21,6 +24,10 @@ const UserSec = () => {
     useEffect(() => {
         fetchGithubUserData();
     }, []);
+
+    if (loading) {
+        return <UserLoader />;
+    }
 
     return (
         <>
