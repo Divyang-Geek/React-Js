@@ -1,28 +1,43 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import UserCard from "./UserCard";
 
 const UserSec = () => {
+    const [users, setUsers] = useState([]);
+
+    const fetchGithubUserData = async () => {
+        try {
+            const ApiUrl = `https://api.github.com/users`;
+
+            // Fetch Api
+            const resp = await fetch(ApiUrl);
+            const data = await resp.json();
+            setUsers(data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        fetchGithubUserData();
+    }, []);
+
     return (
         <>
             <div className="user_sec pt-5">
                 <Container>
                     <Row>
                         <Col lg={12}>
-                            <div className="sec_title text-center">
-                                <h2 className="fw-bold">List Of Github Users</h2>
+                            <div className="sec_title text-center mb-5">
+                                <h1 className="fw-bold">List Of Github Users</h1>
                             </div>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col lg={4}>
-                            <Card style={{ width: "18rem" }}>
-                                <Card.Img variant="top" src="holder.js/100px180" />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
+                    <Row className="g-5">
+                        {users.map((elem) => {
+                            const { id } = elem;
+                            return <UserCard key={id} elem={elem} />;
+                        })}
                     </Row>
                 </Container>
             </div>
