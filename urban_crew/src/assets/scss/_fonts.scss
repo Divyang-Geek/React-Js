@@ -1,0 +1,63 @@
+/* === Font Family Start === */
+@mixin font_family($font_name, $font_path, $font_weight: normal, $font_style: normal) {
+    @font-face {
+        font-family: $font_name;
+        src: url($font_path + ".eot");
+        src: url($font_path + ".eot?#iefix") format("embedded-opentype"), url($font_path + ".woff2") format("woff2"), url($font_path + ".woff") format("woff"), url($font_path + ".ttf") format("truetype");
+        font-weight: $font_weight;
+        font-style: $font_style;
+        font-display: swap;
+    }
+}
+
+@include font_family("Sen", "../fonts/Sen-Regular", 400);
+@include font_family("Sen", "../fonts/Sen-Bold", 700);
+@include font_family("Sen", "../fonts/Sen-ExtraBold", 900);
+@include font_family("Playfair Display", "../fonts/PlayfairDisplay-Regular", 400);
+@include font_family("Playfair Display", "../fonts/PlayfairDisplay-Italic", normal, italic);
+@include font_family("Playfair Display", "../fonts/PlayfairDisplay-Medium", 500);
+@include font_family("Playfair Display", "../fonts/PlayfairDisplay-SemiBold", 600);
+@include font_family("Playfair Display", "../fonts/PlayfairDisplay-Bold", 700);
+@include font_family("Playfair Display", "../fonts/PlayfairDisplay-ExtraBold", 800);
+@include font_family("Playfair Display", "../fonts/PlayfairDisplay-Black", 900);
+
+/* === Font Family End === */
+
+// Font Variables
+$primary_font: "Sen", sans-serif;
+$secondary_font: "Playfair Display", serif;
+
+// html,
+// body {
+//     @include font(16px, 1.5, 400);
+//     overflow-x: hidden !important;
+// }
+
+// p {
+//     @include font(16px, 1.5, 400);
+//     margin-bottom: 15px;
+// }
+
+// .h1_title {
+//     @include font(120px, 1.2, 700);
+//     margin-bottom: 40px;
+
+//     @include media_screen(max, $xxxl_max) {
+//         font-size: 100px;
+//     }
+// }
+
+// .h2_title {
+//     @include font(80px, 1.2, 700);
+//     margin-bottom: 40px;
+
+//     .underline_title {
+//         color: $orange;
+//         border-bottom: 1px solid $orange;
+//     }
+// }
+
+// .h4_title {
+//     @include font(40px, 1.2, 700);
+//     margin-bottom: 10px;
+// }

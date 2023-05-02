@@ -1,0 +1,86 @@
+@import "variable";
+
+@import "theme_colors";
+
+@import "fonts";
+
+@import "mixin";
+
+// Common
+:root {
+    --uc-primary-color: #{$primary_color};
+    // --uc-primary-color-rgb: #{$primary_color_rgb};
+    --uc-primary-color-rgb: 207, 161, 96;
+    --uc-secondary-color: #{$secondary_color};
+    --uc-secondary-color-rgb: 51, 65, 75;
+    --uc-white-light-color: #{$white_light_color};
+    --uc-white-light-color2: #{$white_light_color2};
+    --uc-white-light-color2-rgb: 207, 207, 207;
+    --uc-white-color: #{$white_color};
+    --uc-white-color-rgb: 255, 255, 255;
+    --uc-black-color: #{$black_color};
+    --uc-box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+    --uc-text-shadow: 2px 2px 0 rgb(0 0 0 / 30%);
+    --uc-primary-font-family: #{$primary_font};
+    --uc-secondary-font-family: #{$secondary_font};
+    --uc-transition-duration: 0.8s;
+    --uc-transition-timing-function: cubic-bezier(0.22, 0.78, 0.45, 1.02);
+    --uc-transition2-duration: 0.5s;
+    --uc-transition2-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+    --uc-spacing: 100px;
+    --uc-spacing-y: 100px;
+    --uc-header-height: 100px;
+    --uc-spacing-x: clamp(80px, 5.209vw, 100px);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden !important;
+}
+
+body {
+    margin: 0;
+    font-family: var(--uc-primary-font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    @include list_reset;
+}
+
+.back_img {
+    @include back_img();
+}
+
+// Body Lines
+.body-lines {
+    .body-line-hor {
+        --uc-body-line-count: calc(100% / 2);
+        position: fixed;
+        top: 0;
+        left: calc(var(--uc-body-line) * var(--uc-body-line-count));
+        width: 1px;
+        height: 100%;
+        background-color: rgba(var(--uc-white-light-color2-rgb), 0.5);
+        z-index: 5;
+
+        &:first-child {
+            left: var(--uc-spacing-x);
+        }
+        &:last-child {
+            left: calc(100% - var(--uc-spacing-x));
+        }
+    }
+}
