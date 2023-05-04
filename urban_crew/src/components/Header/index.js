@@ -1,13 +1,28 @@
 import { Col, Container, Row } from "react-bootstrap";
+import SiteBranding from "../Common/SiteBranding";
+import SiteNavigationLogo from "../Common/SiteNavigationLogo";
+import Menu from "../Common/Menu";
+import HeaderMenuData from "./HeaderMenuData";
 
 const Header = () => {
     return (
         <>
-            <header class="site-header">
-                <Container className="p-0">
+            <header className="site-header">
+                <Container fluid className="p-0">
                     <Row>
-                        <Col lg="auto">
-
+                        <Col xs="auto" className="for-des">
+                            <SiteBranding />
+                        </Col>
+                        <Col>
+                            <div className="site-navigation-box">
+                                <SiteNavigationLogo />
+                                <div className="site-navigation">
+                                    <Menu menuData={HeaderMenuData} />
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs="auto" className="for-des">
+                            <SiteBranding />
                         </Col>
                     </Row>
                 </Container>

@@ -1,4 +1,4 @@
-/* === Font Family Start === */
+/*===== Font Family Start =====*/
 @mixin font_family($font_name, $font_path, $font_weight: normal, $font_style: normal) {
     @font-face {
         font-family: $font_name;
@@ -21,7 +21,7 @@
 @include font_family("Playfair Display", "../fonts/PlayfairDisplay-ExtraBold", 800);
 @include font_family("Playfair Display", "../fonts/PlayfairDisplay-Black", 900);
 
-/* === Font Family End === */
+/*===== Font Family Start =====*/
 
 // Font Variables
 $primary_font: "Sen", sans-serif;
