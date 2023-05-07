@@ -1,12 +1,19 @@
+@import "theme_colors";
+
 // Images
-$body_img : url("../../assets/images/body-bg.jpg");
+$body_img: url("../../assets/images/body-bg.jpg");
 
 // Transitions
 $transition: 0.5s all;
 
+// Shadows
+$box_shadow: 0 3px 6px rgba($black_color, 16%);
+$text_shadow: 2px 2px 0 rgba($black_color, 30%);
+
 // Breakpoints
 $breakpoints: (
-    "small": 767px,
+    "small": 768px,
     "medium": 992px,
     "large": 1200px,
+    "x_large": 1400px,
 ) !default;

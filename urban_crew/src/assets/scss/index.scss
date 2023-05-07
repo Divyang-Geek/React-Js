@@ -14,14 +14,10 @@
     --uc-white-light-color2: #{$white_light_color2};
     --uc-white-color: #{$white_color};
     --uc-black-color: #{$black_color};
-    --uc-box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
-    --uc-text-shadow: 2px 2px 0 rgb(0 0 0 / 30%);
+    --uc-box-shadow: #{$box_shadow};
+    --uc-text-shadow: #{text_shadow};
     --uc-primary-font-family: #{$primary_font};
     --uc-secondary-font-family: #{$secondary_font};
-    // --uc-transition-duration: 0.8s;
-    // --uc-transition-timing-function: cubic-bezier(0.22, 0.78, 0.45, 1.02);
-    // --uc-transition2-duration: 0.5s;
-    // --uc-transition2-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
     --uc-spacing: 100px;
     --uc-spacing-y: 100px;
     --uc-header-height: 100px;
@@ -398,7 +394,7 @@ a:active {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transition: var(--uc-transition-duration) var(--uc-transition-timing-function);
+    @include transition;
     outline: none;
     border: none;
     z-index: 5;
@@ -414,7 +410,7 @@ a:active {
     width: 100%;
     height: 1px;
     background: var(--uc-secondary-color);
-    transition: var(--uc-transition-duration) var(--uc-transition-timing-function);
+    @include transition;
 }
 
 .sidebar-menu-close-btn span:first-child {
