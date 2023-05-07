@@ -33,30 +33,33 @@
     color: $f_color;
 }
 
-@mixin before_after($cont: "", $pos: absolute, $t_b: top, $t_b_val: 0, $l_r: left, $l_r_val: 0, $trans_prop: translate, $trans_x: 0, $trans_y: 0, $w: 100%, $h: 100%, $z_ind: initial) {
+@mixin before_after($cont: "", $pos: absolute, $t_b: top, $t_b_val: 0, $l_r: left, $l_r_val: 0, $w: 100%, $h: 100%, $z_ind: initial) {
     content: $cont;
     position: $pos;
     #{$t_b}: $t_b_val;
     #{$l_r}: $l_r_val;
-    transform: #{$trans_prop }($trans_x, $trans_y);
     width: $w;
     height: $h;
     z-index: $z_ind;
 }
 
-@mixin position($pos: absolute, $t_b: top, $t_b_val: 0, $l_r: left, $l_r_val: 0, $trans_prop: translate, $trans_x: 0, $trans_y: 0, $z_ind: initial) {
+@mixin position($pos: absolute, $t_b: top, $t_b_val: 0, $l_r: left, $l_r_val: 0, $z_ind: initial) {
     position: $pos;
     #{$t_b}: $t_b_val;
     #{$l_r}: $l_r_val;
-    transform: #{$trans_prop }($trans_x, $trans_y);
     z-index: $z_ind;
 }
 
-@mixin w_h($w: 100%, $h: 100%) {
+@mixin w_h_100($w: 100%, $h: 100%) {
     width: $w;
     height: $h;
 }
 
 @mixin radius($r: 10px) {
     border-radius: $r;
+}
+
+@mixin transition($t_d: 0.8s, $t_t_f: cubic-bezier(0.22, 0.78, 0.45, 1.02)) {
+    transition-duration: $t_d;
+    transition-timing-function: $t_t_f;
 }

@@ -3,6 +3,7 @@ import SiteBranding from "../Common/SiteBranding";
 import SiteNavigationLogo from "../Common/SiteNavigationLogo";
 import Menu from "../Common/Menu";
 import HeaderMenuData from "./HeaderMenuData";
+import SiteMenu from "./SiteMenu";
 
 const Header = () => {
     return (
@@ -15,14 +16,14 @@ const Header = () => {
                         </Col>
                         <Col>
                             <div className="site-navigation-box">
-                                <SiteNavigationLogo />
+                                <SiteNavigationLogo clsName="site-navigation-logo" />
                                 <div className="site-navigation">
                                     <Menu menuData={HeaderMenuData} />
                                 </div>
                             </div>
                         </Col>
                         <Col xs="auto" className="for-des">
-                            <SiteBranding />
+                            <SiteMenu />
                         </Col>
                     </Row>
                 </Container>
