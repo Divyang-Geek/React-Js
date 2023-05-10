@@ -1,4 +1,6 @@
 /*===== Font Family Start =====*/
+$font_default_path: "../fonts" !default;
+
 @mixin font_family($font_name, $font_path, $font_weight: normal, $font_style: normal) {
     @font-face {
         font-family: $font_name;
@@ -10,16 +12,16 @@
     }
 }
 
-@include font_family("Sen", "../fonts/Sen-Regular", 400);
-@include font_family("Sen", "../fonts/Sen-Bold", 700);
-@include font_family("Sen", "../fonts/Sen-ExtraBold", 900);
-@include font_family("Playfair Display", "../fonts/PlayfairDisplay-Regular", 400);
-@include font_family("Playfair Display", "../fonts/PlayfairDisplay-Italic", normal, italic);
-@include font_family("Playfair Display", "../fonts/PlayfairDisplay-Medium", 500);
-@include font_family("Playfair Display", "../fonts/PlayfairDisplay-SemiBold", 600);
-@include font_family("Playfair Display", "../fonts/PlayfairDisplay-Bold", 700);
-@include font_family("Playfair Display", "../fonts/PlayfairDisplay-ExtraBold", 800);
-@include font_family("Playfair Display", "../fonts/PlayfairDisplay-Black", 900);
+@include font_family("Sen", "#{$font_default_path}/Sen-Regular", 400);
+@include font_family("Sen", "#{$font_default_path}/Sen-Bold", 700);
+@include font_family("Sen", "#{$font_default_path}/Sen-ExtraBold", 900);
+@include font_family("Playfair Display", "#{$font_default_path}/PlayfairDisplay-Regular", 400);
+@include font_family("Playfair Display", "#{$font_default_path}/PlayfairDisplay-Italic", normal, italic);
+@include font_family("Playfair Display", "#{$font_default_path}/PlayfairDisplay-Medium", 500);
+@include font_family("Playfair Display", "#{$font_default_path}/PlayfairDisplay-SemiBold", 600);
+@include font_family("Playfair Display", "#{$font_default_path}/PlayfairDisplay-Bold", 700);
+@include font_family("Playfair Display", "#{$font_default_path}/PlayfairDisplay-ExtraBold", 800);
+@include font_family("Playfair Display", "#{$font_default_path}/PlayfairDisplay-Black", 900);
 
 /*===== Font Family Start =====*/
 
@@ -27,37 +29,99 @@
 $primary_font: "Sen", sans-serif;
 $secondary_font: "Playfair Display", serif;
 
-// html,
-// body {
-//     @include font(16px, 1.5, 400);
-//     overflow-x: hidden !important;
-// }
+$breakpoints: (
+    small: 480px,
+    medium: 992px,
+    large: 1200px,
+);
 
-// p {
-//     @include font(16px, 1.5, 400);
-//     margin-bottom: 15px;
-// }
+$h1_font_sizes: (
+    null: 28px,
+    small: 31px,
+    medium: 33px,
+    large: (
+        4.375rem,
+        1.16,
+    ),
+);
 
-// .h1_title {
-//     @include font(120px, 1.2, 700);
-//     margin-bottom: 40px;
+$h2_font_sizes: (
+    null: 28px,
+    small: 31px,
+    medium: 33px,
+    large: (
+        2.875rem,
+        1.3,
+    ),
+);
 
-//     @include media_screen(max, $xxxl_max) {
-//         font-size: 100px;
-//     }
-// }
+$h3_font_sizes: (
+    null: 26px,
+    small: 28px,
+    medium: 34px,
+    large: (
+        2.375rem,
+        1.4,
+    ),
+);
 
-// .h2_title {
-//     @include font(80px, 1.2, 700);
-//     margin-bottom: 40px;
+$h4_font_sizes: (
+    null: 24px,
+    small: 26px,
+    medium: 28px,
+    large: (
+        1.75rem,
+        1.25,
+    ),
+);
 
-//     .underline_title {
-//         color: $orange;
-//         border-bottom: 1px solid $orange;
-//     }
-// }
+$h5_font_sizes: (
+    null: 24px,
+    small: 26px,
+    medium: 28px,
+    large: (
+        1.5rem,
+        1.55,
+    ),
+);
 
-// .h4_title {
-//     @include font(40px, 1.2, 700);
-//     margin-bottom: 10px;
-// }
+$h6_font_sizes: (
+    null: 24px,
+    small: 26px,
+    medium: 28px,
+    large: (
+        1.25rem,
+        1.55,
+    ),
+);
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+        @if $fs-breakpoint == null {
+            @include make-font-size($fs-font-size);
+        } @else {
+            // If $fs-font-size is a key that exists in
+            // $fs-breakpoints, use the value
+            @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+                $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+            }
+            @media screen and (min-width: $fs-breakpoint) {
+                @include make-font-size($fs-font-size);
+            }
+        }
+    }
+}
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+    // If $fs-font-size is a list, include
+    // both font-size and line-height
+    @if type-of($fs-font-size) == "list" {
+        font-size: nth($fs-font-size, 1);
+        @if (length($fs-font-size) > 1) {
+            line-height: nth($fs-font-size, 2);
+        }
+    } @else {
+        font-size: $fs-font-size;
+    }
+}

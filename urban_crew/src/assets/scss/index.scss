@@ -2,11 +2,18 @@
 
 @import "theme_colors";
 
-@import "fonts";
-
 @import "mixin";
 
+@import "fonts";
+
+@import "typography";
+
+@import "space";
+
+@import "typography";
+
 /*===== Common Start =====*/
+
 :root {
     --uc-primary-color: #{$primary_color};
     --uc-secondary-color: #{$secondary_color};
@@ -14,10 +21,11 @@
     --uc-white-light-color2: #{$white_light_color2};
     --uc-white-color: #{$white_color};
     --uc-black-color: #{$black_color};
-    --uc-box-shadow: #{$box_shadow};
-    --uc-text-shadow: #{text_shadow};
     --uc-primary-font-family: #{$primary_font};
     --uc-secondary-font-family: #{$secondary_font};
+    --uc-noise-img: url("../../assets/images/body-bg.jpg");
+    --uc-box-shadow: 0 3px 6px rgba($black_color, 16%);
+    --uc-text-shadow: 2px 2px 0 rgba($black_color, 30%);
     --uc-spacing: 100px;
     --uc-spacing-y: 100px;
     --uc-header-height: 100px;
@@ -38,7 +46,7 @@ body {
 body {
     margin: 0;
     font-family: var(--uc-primary-font-family);
-    background-image: $body_img;
+    background-image: var(--uc-noise-img);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -57,18 +65,106 @@ ul {
 }
 
 a {
-    color: var(--uc-primary-color);
     @include transition;
+    color: var(--uc-primary-color);
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
 }
 
-a,
-a:hover,
-a:focus,
-a:active {
-    text-decoration: none;
+p {
+    &:last-child,
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 }
 
 /*===== Common End =====*/
+
+/*===== Form Start =====*/
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.form-control-wrap {
+    position: relative;
+    width: 100%;
+    display: block;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+[class*="col-"]:not(:last-child) .form-control-wrap {
+    margin-bottom: 1.5rem;
+}
+
+.form-input {
+    width: 100%;
+    height: 60px;
+    padding: 10px 30px;
+    background: var(--uc-white-color);
+    border: none;
+    border-radius: 0;
+    color: var(--uc-secondary-color);
+    font-size: 16px;
+    line-height: 1.2;
+    outline: none !important;
+
+    &::-webkit-input-placeholder,
+    &::placeholder {
+        color: rgba($secondary_color, 0.8);
+    }
+}
+
+.form-input2 {
+    width: 100%;
+    height: 60px;
+    padding: 10px 0 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba($white_light_color2, 0.5);
+    border-radius: 0;
+    color: var(--uc-secondary-color);
+    font-size: 16px;
+    line-height: 1.2;
+    outline: none !important;
+    display: block;
+
+    &::-webkit-input-placeholder,
+    &::placeholder {
+        color: rgba($secondary_color, 0.8);
+    }
+}
+
+.form-input-line {
+    @include position($t_b: bottom);
+    width: 100%;
+    height: 1px;
+    background: var(--uc-secondary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    @include transition;
+    transition-property: transform;
+}
+
+.has-focus .form-input-line {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/*===== Form End =====*/
 
 /*===== Body Lines Start =====*/
 .body-lines {
@@ -85,6 +181,7 @@ a:active {
         &:first-child {
             left: var(--uc-spacing-x);
         }
+
         &:last-child {
             left: calc(100% - var(--uc-spacing-x));
         }
@@ -97,9 +194,9 @@ a:active {
 .site-header {
     @include position($pos: fixed, $z_ind: 100);
     @include w_h_100($h: var(--uc-header-height));
-    background-image: $body_img;
-    background-repeat: repeat;
     @include transition;
+    background-image: var(--uc-noise-img);
+    background-repeat: repeat;
 
     &:after {
         @include before_after($t_b: bottom, $h: 1px);
@@ -125,10 +222,10 @@ a:active {
 
     &::after {
         @include before_after($t_b: bottom, $l_r_val: 100%, $w: 1px);
+        @include transition;
         transform-origin: right bottom;
         transform: scaleY(1);
         background: rgba($white_light_color2, 0.5);
-        @include transition;
     }
 
     a {
@@ -143,10 +240,10 @@ a:active {
 }
 
 .site-navigation-box {
+    @include d_flex($justify: space-between);
     height: 100%;
     position: relative;
     padding: 0 calc(var(--uc-spacing-x) / 4.5);
-    @include d_flex($justify: space-between);
 }
 
 .site-navigation-logo {
@@ -185,10 +282,10 @@ a:active {
 
                 &:before {
                     @include before_after($t_b: bottom, $h: 1px);
+                    @include transition;
                     transform: scaleX(0);
                     transform-origin: bottom left;
                     background: var(--uc-secondary-color);
-                    @include transition;
                 }
 
                 & > a {
@@ -221,6 +318,7 @@ a:active {
                 }
 
                 & > ul.sub-menu {
+                    @include transition;
                     position: absolute;
                     width: 200px;
                     z-index: 10;
@@ -234,14 +332,13 @@ a:active {
                     overflow: hidden;
                     opacity: 0;
                     visibility: hidden;
-                    @include transition;
 
                     li {
+                        @include transition;
                         position: relative;
                         transform: translateY(15px);
                         opacity: 0;
                         visibility: hidden;
-                        @include transition;
                         transition-delay: var(--uc-menu-li-delay);
 
                         a {
@@ -280,53 +377,43 @@ a:active {
 /*===== Sidebar Menu Start =====*/
 
 .site-menu {
+    @include d_flex($justify: flex-end);
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
     position: relative;
 
     &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 1px;
-        height: 100%;
+        @include before_after($t_b: bottom, $w: 1px);
         background: rgba($white_light_color2, 0.5);
         transition: var(--uc-transition);
     }
 }
 
 .site-menu-btn-wp {
+    @include d_flex;
     height: 100%;
     width: var(--uc-spacing-x);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 
 .site-menu-btn {
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    --size: 40px;
+    @include d_flex;
     @include transition;
+    width: var(--size);
+    height: var(--size);
+    background: transparent;
+    flex-direction: column;
     outline: none;
     border: none;
     position: relative;
     z-index: 101;
 
     span {
+        @include transition;
         display: block;
         width: 100%;
         height: 1px;
         background: var(--uc-secondary-color);
-        @include transition;
 
         &:not(:last-child) {
             margin-bottom: 6px;
@@ -338,97 +425,109 @@ a:active {
     }
 }
 
-/*===== Sidebar Menu End =====*/
-
-/*==========Sidebar Menu CSS Start==========*/
-
 .sidebar-menu-box {
-    position: fixed;
-    top: 0;
-    right: 0;
+    @include position($pos: fixed, $l_r: right, $z_ind: 110);
+    @include transition;
+    @include w_h_100($h: 100vh);
     max-width: 400px;
-    width: 100%;
-    height: 100vh;
     background: var(--uc-white-light-color);
     padding: calc(var(--uc-header-height) + 10px) 40px 40px 40px;
     display: flex;
     flex-direction: column;
     box-shadow: var(--uc-box-shadow);
     transform: translateX(110%);
-    @include transition;
     overflow-y: auto;
     backface-visibility: hidden;
     will-change: transform;
-    z-index: 110;
 }
 
 .sidebar-menu-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 100vw;
+    @include position($pos: fixed, $l_r: right, $z_ind: 109);
+    @include w_h_100($w: 100vw, $h: 100vh);
+    @include transition;
     background-color: rgba($secondary_color, 0.7);
     transform: scaleX(0);
     transform-origin: center right;
-    @include transition;
-    z-index: 109;
 }
 
-.toggle-menu .sidebar-menu-box {
-    transform: translateX(0);
-}
-
-.toggle-menu .sidebar-menu-overlay {
-    transform: scaleX(1);
+.toggle-menu {
+    .sidebar-menu-box {
+        transform: translateX(0);
+    }
+    .sidebar-menu-overlay {
+        transform: scaleX(1);
+    }
 }
 
 .sidebar-menu-close-btn {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    --size: 40px;
+    @include position($t_b_val: 30px, $l_r: right, $l_r_val: 30px, $z_ind: 5);
     @include transition;
+    @include d_flex;
+    width: var(--size);
+    height: var(--size);
+    background: transparent;
+    flex-direction: column;
     outline: none;
     border: none;
-    z-index: 5;
+
+    span {
+        @include transition;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: var(--uc-secondary-color);
+
+        &:first-child {
+            transform: rotate(50deg);
+        }
+
+        &:last-child {
+            transform: rotate(-50deg);
+        }
+    }
+
+    &:hover span {
+        &:first-child,
+        &:last-child {
+            transform: rotate(180deg);
+        }
+    }
 }
 
-.sidebar-menu-close-btn:hover span:first-child,
-.sidebar-menu-close-btn:hover span:last-child {
-    transform: rotate(180deg);
+.sidebar-menu-logo {
+    a {
+        display: inline-block;
+        width: 220px;
+
+        img {
+            width: 100%;
+        }
+    }
 }
 
-.sidebar-menu-close-btn span {
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: var(--uc-secondary-color);
-    @include transition;
+.search-form {
+    .form-input2 {
+        padding-right: 25px;
+    }
+    .search-btn {
+        @include position($l_r: right, $z_ind: 2);
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        color: inherit;
+        border: none;
+        outline: none;
+        background: linear-gradient(90deg, var(--uc-primary-color) 0%, var(--uc-secondary-color) 100%);
+        width: 20px;
+        -webkit-mask-image: url("../images/search-icon.svg");
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 100%;
+    }
 }
 
-.sidebar-menu-close-btn span:first-child {
-    transform: rotate(50deg);
-}
-
-.sidebar-menu-close-btn span:last-child {
-    transform: rotate(-50deg);
-}
-
-.sidebar-menu-logo a {
-    display: inline-block;
-    width: 220px;
-}
-
-.sidebar-menu-logo a img {
-    width: 100%;
-}
+/*===== Sidebar Menu End =====*/
 
 .sidebar-instagram .h3-title {
     font-size: 25px;
@@ -510,5 +609,3 @@ a:active {
 .sidebar-copyright p a:hover {
     color: var(--uc-secondary-color);
 }
-
-/*==========Sidebar Menu CSS End==========*/

@@ -17,7 +17,11 @@ const SidebarMenu = ({ show, setShow }) => {
                     <div className="sidebar-menu-inr">
                         <SiteNavigationLogo clsName="sidebar-menu-logo mb-40" />
                         <div className="sidebar-search search-form mb-40">
-                            <form>
+                            <form
+                                onSubmit={(e) => {
+                                    e.preventDefault();
+                                }}
+                            >
                                 <div className="form-control-wrap">
                                     <input type="search" className="form-input2" placeholder="Search here..." required />
                                     <button type="submit" className="search-btn"></button>

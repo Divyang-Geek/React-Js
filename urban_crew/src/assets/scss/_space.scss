@@ -1,0 +1,190 @@
+$space: (
+    "300": 300px,
+    "200": 200px,
+    "250": 250px,
+    "150": 150px,
+    "120": 120px,
+    "100": 100px,
+    "80": 80px,
+    "70": 70px,
+    "60": 60px,
+    "50": 50px,
+    "40": 40px,
+    "30": 30px,
+    "20": 20px,
+    "15": 15px,
+    "10": 10px,
+);
+
+@each $name, $size in $space {
+    .mt-#{$name} {
+        margin-top: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .mb-#{$name} {
+        margin-bottom: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .my-#{$name} {
+        margin-top: $size !important;
+        margin-bottom: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .ml-#{$name} {
+        margin-left: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .mr-#{$name} {
+        margin-right: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .mx-#{$name} {
+        margin-left: $size !important;
+        margin-right: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .pt-#{$name} {
+        padding-top: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .pb-#{$name} {
+        padding-bottom: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .py-#{$name} {
+        padding-top: $size !important;
+        padding-bottom: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .pl-#{$name} {
+        padding-left: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .pr-#{$name} {
+        padding-right: $size !important;
+    }
+}
+
+@each $name, $size in $space {
+    .px-#{$name} {
+        padding-left: $size !important;
+        padding-right: $size !important;
+    }
+}
+
+.row {
+    @each $name, $size in $space {
+        &.g-#{$name} {
+            --bs-gutter-x: #{$size};
+            --bs-gutter-y: #{$size};
+        }
+    }
+}
+
+$space-md-mobile: (
+    "300": 160px,
+    "200": 150px,
+    "250": 200px,
+    "100": 80px,
+    "150": 100px,
+    "80": 40px,
+    "40": 20px,
+);
+
+@media (max-width: 1199px) {
+    @each $name, $size in $space-md-mobile {
+        .mt-#{$name} {
+            margin-top: $size !important;
+        }
+    }
+
+    @each $name, $size in $space-md-mobile {
+        .mb-#{$name} {
+            margin-bottom: $size !important;
+        }
+    }
+
+    @each $name, $size in $space-md-mobile {
+        .my-#{$name} {
+            margin-top: $size !important;
+            margin-bottom: $size !important;
+        }
+    }
+
+    @each $name, $size in $space {
+        .ml-#{$name} {
+            margin-left: $size !important;
+        }
+    }
+
+    @each $name, $size in $space {
+        .mr-#{$name} {
+            margin-right: $size !important;
+        }
+    }
+
+    @each $name, $size in $space {
+        .mx-#{$name} {
+            margin-left: $size !important;
+            margin-right: $size !important;
+        }
+    }
+
+    @each $name, $size in $space-md-mobile {
+        .pt-#{$name} {
+            padding-top: $size !important;
+        }
+    }
+
+    @each $name, $size in $space-md-mobile {
+        .pb-#{$name} {
+            padding-bottom: $size !important;
+        }
+    }
+
+    @each $name, $size in $space-md-mobile {
+        .py-#{$name} {
+            padding-top: $size !important;
+            padding-bottom: $size !important;
+        }
+    }
+
+    @each $name, $size in $space {
+        .pl-#{$name} {
+            padding-left: $size !important;
+        }
+    }
+
+    @each $name, $size in $space {
+        .pr-#{$name} {
+            padding-right: $size !important;
+        }
+    }
+
+    @each $name, $size in $space {
+        .px-#{$name} {
+            padding-left: $size !important;
+            padding-right: $size !important;
+        }
+    }
+}
