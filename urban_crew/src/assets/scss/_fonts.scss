@@ -40,8 +40,8 @@ $h1_font_sizes: (
     small: 31px,
     medium: 33px,
     large: (
-        4.375rem,
-        1.16,
+        clamp(60px, 4.1vw, 90px),
+        1.2,
     ),
 );
 
@@ -125,3 +125,4 @@ $h6_font_sizes: (
         font-size: $fs-font-size;
     }
 }
+

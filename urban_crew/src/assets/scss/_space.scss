@@ -188,3 +188,8 @@ $space-md-mobile: (
         }
     }
 }
+
+.marginX-100 {
+    margin-left: var(--uc-spacing-x);
+    margin-right: var(--uc-spacing-x);
+}
