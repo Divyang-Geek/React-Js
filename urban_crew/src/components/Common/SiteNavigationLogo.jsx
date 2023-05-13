@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import siteNavigationLogo from "../../assets/images/site-logo-dark.svg";
 
-const SiteNavigationLogo = ({ clsName }) => {
+const SiteNavigationLogo = ({ className }) => {
     return (
         <>
-            <div className={`site-logo ${clsName ? clsName : ""}`}>
+            <div className={`site-logo ${className ? className : ""}`}>
                 <Link to={"/"} title="Urban Crew - Business Consulting">
                     <img src={siteNavigationLogo} alt="siteNavigationLogo" />
                 </Link>

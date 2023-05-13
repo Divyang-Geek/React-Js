@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SiteBranding from "../Common/SiteBranding";
 import SiteNavigationLogo from "../Common/SiteNavigationLogo";
@@ -6,6 +7,19 @@ import HeaderMenuData from "./HeaderMenuData";
 import SiteMenu from "./SiteMenu";
 
 const Header = () => {
+    const headerSticky = (e) => {
+        const head = document.querySelector(".site-header");
+        const windowScrollY = window.scrollY;
+        windowScrollY >= 200 ? head.classList.add("header-sticky") : head.classList.remove("header-sticky");
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", headerSticky);
+        return () => {
+            window.removeEventListener("scroll", headerSticky);
+        };
+    });
+
     return (
         <>
             <header className="site-header">
@@ -16,7 +30,7 @@ const Header = () => {
                         </Col>
                         <Col>
                             <div className="site-navigation-box">
-                                <SiteNavigationLogo clsName="site-navigation-logo" />
+                                <SiteNavigationLogo className="site-navigation-logo" />
                                 <div className="site-navigation">
                                     <Menu menuData={HeaderMenuData} />
                                 </div>

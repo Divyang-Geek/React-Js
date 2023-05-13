@@ -15,7 +15,7 @@ const SidebarMenu = ({ show, setShow }) => {
                         <span></span>
                     </button>
                     <div className="sidebar-menu-inr">
-                        <SiteNavigationLogo clsName="sidebar-menu-logo mb-40" />
+                        <SiteNavigationLogo className="sidebar-menu-logo mb-40" />
                         <div className="sidebar-search search-form mb-40">
                             <form
                                 onSubmit={(e) => {

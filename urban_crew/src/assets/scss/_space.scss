@@ -193,3 +193,9 @@ $space-md-mobile: (
     margin-left: var(--uc-spacing-x);
     margin-right: var(--uc-spacing-x);
 }
+
+.section {
+    padding-top: var(--uc-spacing-y);
+    padding-bottom: var(--uc-spacing-y);
+    position: relative;
+}

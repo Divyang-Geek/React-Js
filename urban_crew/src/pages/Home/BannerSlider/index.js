@@ -21,6 +21,10 @@ const BannerSlider = () => {
                                 loop={true}
                                 pagination={{ clickable: true, el: ".swiper-pagination", type: "fraction" }}
                                 autoplay={{ delay: 3500, disableOnInteraction: false }}
+                                // onSlideChange={() => {
+                                //     console.log("Slide Change");
+                                // }}
+                                // onSwiper={(swiper) => console.log(swiper)}
                             >
                                 {BannerSliderData.map((data) => {
                                     const { id, img, content, link } = data;
@@ -70,6 +74,11 @@ const BannerSlider = () => {
                                 })}
                                 <div className="swiper-pagination">
                                     <span className="swiper-pagination-current"></span> /<span className="swiper-pagination-total"></span>
+                                </div>
+                                <div className="swiper-progress-bar active">
+                                    <span className="slide_progress-bar">
+                                        <span className="slide_progress-bar-inner"></span>
+                                    </span>
                                 </div>
                             </Swiper>
                         </div>

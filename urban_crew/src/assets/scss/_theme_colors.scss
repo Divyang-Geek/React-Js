@@ -5,3 +5,19 @@ $white_color: #ffffff;
 $black_color: #000000;
 $white_light_color: #f6f6f6;
 $white_light_color2: #cfcfcf;
+
+
+// Colors map
+$colors: (
+    "primary": $primary_color,
+    "secondary": $secondary_color,
+);
+
+@each $color_key, $color_val in $colors {
+    .#{$color_key}-text {
+        color: $color_val;
+    }
+    .#{$color_key}-bg {
+        background-color: $color_val;
+    }
+}

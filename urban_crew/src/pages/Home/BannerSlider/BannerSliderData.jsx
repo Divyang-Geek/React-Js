@@ -28,4 +28,17 @@ export const BannerSliderData = [
         ],
         link: "/about",
     },
+    {
+        id: 3,
+        img: bannerImage2,
+        content: [
+            {
+                text1: "An",
+                text2: "Exclusive",
+                text3: "Learning",
+                text4: "Journey For Consulting",
+            },
+        ],
+        link: "/about",
+    },
 ];
