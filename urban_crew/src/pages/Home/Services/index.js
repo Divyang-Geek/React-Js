@@ -7,24 +7,21 @@ import { ServicesData } from "./ServicesData";
 const Services = () => {
     return (
         <>
-            <div className="main-service section">
+            <section className="main-service section">
                 <div className="sec-wp">
                     <Container>
                         <Row>
                             <Col xs={12} lg={8} className="mx-lg-auto">
                                 <SecTitle
-                                    subTitleText={{
-                                        subFirst: "Our",
-                                        subSecond: "Services",
-                                    }}
-                                    h2TitleText={{
-                                        h2First: "Creative ",
-                                        h2Second: "Solutions",
-                                        h2Third: "For Grow Your",
-                                        h2Fourth: "Business",
+                                    subTitle={{
+                                        first: "Our",
+                                        second: "Services",
                                     }}
                                     className="mb-80 text-center"
-                                />
+                                    h2Class="yellow-span"
+                                >
+                                    Creative <span>Solutions</span> For Grow Your <span>Business</span>
+                                </SecTitle>
                             </Col>
                         </Row>
                         <div className="service-row">
@@ -56,7 +53,7 @@ const Services = () => {
                         </div>
                     </Container>
                 </div>
-            </div>
+            </section>
         </>
     );
 };

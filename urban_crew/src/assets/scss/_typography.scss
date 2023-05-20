@@ -61,9 +61,13 @@ h6 {
     }
 }
 
-// .h3-title {
-//     @include font-size($h3_font_sizes);
-// }
+.h3-title {
+    @include font-size($h3_font_sizes);
+    color: var(--uc-secondary-color);
+    font-weight: bold;
+    position: relative;
+    text-transform: uppercase;
+}
 
 // .h4-title {
 //     @include font-size($h4_font_sizes);

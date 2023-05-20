@@ -7,7 +7,7 @@ import { BannerSliderData } from "./BannerSliderData";
 const BannerSlider = () => {
     return (
         <>
-            <div className="main-banner marginX-100">
+            <section className="main-banner marginX-100">
                 <div className="sec-wp">
                     <Container fluid className="g-0">
                         <div className="banner-slider-wrap">
@@ -84,7 +84,7 @@ const BannerSlider = () => {
                         </div>
                     </Container>
                 </div>
-            </div>
+            </section>
         </>
     );
 };

@@ -5,10 +5,10 @@ const Menu = ({ menuData }) => {
     const SubMenu = ({ submenu }) => {
         return (
             <ul className="sub-menu">
-                {submenu.map((subM) => {
+                {submenu.map((subM, index) => {
                     const { id, title, link } = subM;
                     return (
-                        <li key={id}>
+                        <li key={id} style={{ "--uc-menu-li-delay": `${index * 100}ms` }}>
                             <NavLink to={link} title={title}>
                                 {title}
                             </NavLink>

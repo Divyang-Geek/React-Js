@@ -7,7 +7,7 @@ const HeaderMenuData = [
     {
         id: "2",
         title: "Pages",
-        link: "javascript:void(0)",
+        link: "/",
         submenu: [
             {
                 id: "2.1",
@@ -44,7 +44,7 @@ const HeaderMenuData = [
     {
         id: "3",
         title: "Services",
-        link: "javascript:void(0)",
+        link: "/",
         submenu: [
             {
                 id: "3.1",
@@ -61,7 +61,7 @@ const HeaderMenuData = [
     {
         id: "4",
         title: "Portfolio",
-        link: "javascript:void(0)",
+        link: "/",
         submenu: [
             {
                 id: "4.1",
@@ -78,7 +78,7 @@ const HeaderMenuData = [
     {
         id: "5",
         title: "Blog",
-        link: "javascript:void(0)",
+        link: "/",
         submenu: [
             {
                 id: "5.1",

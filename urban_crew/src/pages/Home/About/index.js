@@ -10,23 +10,21 @@ import { EffectFade } from "swiper";
 const About = () => {
     return (
         <>
-            <div className="main-about section secondary-bg text-white">
+            <section className="main-about section secondary-bg text-white">
                 <div className="sec-wp">
                     <Container>
                         <Row className="align-items-center">
                             <Col lg={{ span: 6, order: 1 }} xs={{ order: 2 }}>
                                 <div className="about-content white-text">
                                     <SecTitle
-                                        subTitleText={{
-                                            subFirst: "About",
-                                            subSecond: "Us",
+                                        subTitle={{
+                                            first: "About",
+                                            second: "Us",
                                         }}
-                                        h2TitleText={{
-                                            h2First: "We Are",
-                                            h2Second: "Dedicated",
-                                            h2Third: "To Support You",
-                                        }}
-                                    />
+                                        h2Class="yellow-span"
+                                    >
+                                        we are <span>Dedicated</span> To Support You
+                                    </SecTitle>
                                     <div className="about-content-text">
                                         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
                                         <p>I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. I feel the presence of the Almighty, who formed us in his own image, and the breath.</p>
@@ -37,15 +35,6 @@ const About = () => {
                                 </div>
                             </Col>
                             <Col xl={{ span: 5, offset: 1 }} lg={{ span: 6, order: 2 }} xs={{ order: 1 }}>
-                                {/* <Lines className="common-image-wp">
-                                    <div className="common-image overlay" data-overlay="1">
-                                        <div className="common-image-inr">
-                                            <div className="common-image-inr-inr">
-                                                <img src={aboutImage1} alt="aboutImage1" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Lines> */}
                                 <Lines className="common-image-wp">
                                     <Swiper spaceBetween={0} slidesPerView={1} modules={[EffectFade]} loop="true" effect="fade" className="about-image-slider">
                                         <SwiperSlide>
@@ -72,7 +61,7 @@ const About = () => {
                         </Row>
                     </Container>
                 </div>
-            </div>
+            </section>
         </>
     );
 };

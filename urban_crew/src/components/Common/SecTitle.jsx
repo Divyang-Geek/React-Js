@@ -1,19 +1,14 @@
-const SecTitle = ({ subTitleText, h2TitleText, className }) => {
-    const { subFirst, subSecond } = subTitleText;
-    const { h2First, h2Second, h2Third, h2Fourth } = h2TitleText;
+const SecTitle = ({ subTitle, className, children, h2Class }) => {
     return (
         <>
             <div className={`sec-title ${className ? className : ""}`}>
-                {subTitleText && (
+                {subTitle && (
                     <h4 className="sub-title">
-                        {subFirst}
-                        {subSecond && <span className="sub-title-line"> {subSecond}</span>}
+                        {subTitle.first}
+                        {subTitle.second && <span className="sub-title-line"> {subTitle.second}</span>}
                     </h4>
                 )}
-
-                <h2 className="h2-title yellow-span">
-                    {h2First} <span>{h2Second}</span> {h2Third} <span>{h2Fourth}</span>
-                </h2>
+                {children && <h2 className={`h2-title ${h2Class ? h2Class : ""}`}>{children}</h2>}
             </div>
         </>
     );
