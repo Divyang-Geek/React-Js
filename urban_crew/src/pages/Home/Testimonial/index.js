@@ -29,7 +29,7 @@ const Testimonial = () => {
                     </Container>
                     <div className="testimonials-row marginX-100">
                         <Container fluid className="p-0">
-                            <Swiper
+                            {/* <Swiper
                                 className="testimonial-slider overflow-visible"
                                 modules={[Pagination, Autoplay, Navigation]}
                                 spaceBetween={48}
@@ -64,6 +64,54 @@ const Testimonial = () => {
                                     );
                                 })}
 
+                                <div className="swiper-button swiper-button-prev">
+                                    <span className="swiper-button--icon">
+                                        <FaChevronLeft />
+                                    </span>
+                                    <span className="swiper-button--text">Prev</span>
+                                </div>
+                                <div className=" swiper-button swiper-button-next">
+                                    <span className="swiper-button--icon">
+                                        <FaChevronRight />
+                                    </span>
+                                    <span className="swiper-button--text">Next</span>
+                                </div>
+                                <div className="swiper-pagination"></div>
+                            </Swiper> */}
+                            <Swiper
+                                spaceBetween={48}
+                                slidesPerView={2}
+                                loop={true}
+                                pagination={{ clickable: true, el: ".swiper-pagination" }}
+                                navigation={{
+                                    nextEl: ".swiper-button-next",
+                                    prevEl: ".swiper-button-prev",
+                                }}
+                                modules={[Pagination, Navigation]}
+                                className="testimonial-slider overflow-visible"
+                                // autoplay={{ delay: 3000, disableOnInteraction: false }}
+                                // speed={2000}
+                            >
+                                {TestimonialData.map((data) => {
+                                    const { id, name, designation, description, thumbnail } = data;
+                                    return (
+                                        <SwiperSlide key={id}>
+                                            <Lines className="testimonial-box">
+                                                <div className="testimonial-box-quote"></div>
+                                                <div className="testimonial-box-text">
+                                                    <p>{description}</p>
+                                                </div>
+                                                <div className="testimonial-box-footer">
+                                                    <div className="testimonial-box-img back-image" style={{ backgroundImage: `url(${thumbnail})` }}></div>
+                                                    <div className="testimonial-box-footer-content">
+                                                        <h5>{name}</h5>
+                                                        <h6>{designation}</h6>
+                                                    </div>
+                                                </div>
+                                            </Lines>
+                                        </SwiperSlide>
+                                    );
+                                })}
                                 <div className="swiper-button swiper-button-prev">
                                     <span className="swiper-button--icon">
                                         <FaChevronLeft />

@@ -1932,3 +1932,79 @@ select {
 }
 
 /*===== Testimonials End =====*/
+
+/*===== Faqs Start =====*/
+
+.main-faqs {
+    padding: calc(var(--uc-spacing-y) * 1) 0 calc(var(--uc-spacing-y) * 1.5) 0;
+}
+
+.faq-box {
+    position: relative;
+    border-top: 1px solid var(--uc-white-light-color2);
+
+    &:last-child {
+        border-bottom: 1px solid var(--uc-white-light-color2);
+    }
+
+    h3 {
+        @include transition;
+        padding: 30px 60px 30px 0;
+        cursor: pointer;
+        margin-bottom: 0;
+        font-size: 35px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        position: relative;
+
+        .plus {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+            width: 50px;
+            height: 50px;
+
+            &:before {
+                @include transition;
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                background: var(--uc-secondary-color);
+                width: 100%;
+                height: 1px;
+                display: block;
+            }
+
+            &:after {
+                @include transition;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                background: var(--uc-secondary-color);
+                width: 1px;
+                height: 100%;
+                display: block;
+                transform-origin: center;
+                transform: scaleY(1);
+            }
+        }
+
+        &.active .plus:after {
+            transform: scaleY(0);
+        }
+
+        &.active .plus:before {
+            background: var(--uc-white-light-color2);
+        }
+    }
+
+    .faq-content {
+        padding-bottom: 30px;
+    }
+}
+
+/*===== Faqs End =====*/

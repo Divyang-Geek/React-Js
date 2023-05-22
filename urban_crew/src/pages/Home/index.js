@@ -6,6 +6,8 @@ import WorkProcess from "./WorkProcess";
 import Counter from "./Counter";
 import Team from "./Team";
 import Testimonial from "./Testimonial";
+import Faqs from "./Faqs";
+import Pricing from "./Pricing";
 
 const Home = () => {
     return (
@@ -18,6 +20,8 @@ const Home = () => {
             <Counter />
             <Team />
             <Testimonial />
+            <Faqs />
+            <Pricing />
         </>
     );
 };
