@@ -25,7 +25,7 @@ const Pricing = () => {
                                         <Col lg={4} key={id}>
                                             <div className="pricing-box text-center">
                                                 <div className="pricing-box-img">
-                                                    <img src={icon} alt={title} />
+                                                    {icon}
                                                 </div>
                                                 <div className="pricing-box-head white-text">
                                                     <h3 className="h3-title">{title}</h3>

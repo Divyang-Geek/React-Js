@@ -2008,3 +2008,137 @@ select {
 }
 
 /*===== Faqs End =====*/
+
+/*===== Pricing Plans Start =====*/
+
+.pricing-box {
+    box-shadow: var(--uc-box-shadow);
+    border: 1px solid rgba($white_color, 0.4);
+    position: relative;
+    padding: 50px;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .pricing-box-img {
+        @include d_flex;
+        width: 100px;
+        height: 100px;
+        margin: auto auto 40px;
+        background: var(--uc-primary-color);
+        color: var(--uc-white-color);
+
+        svg {
+            max-width: 60px;
+            max-height: 60px;
+            fill: currentColor;
+        }
+    }
+
+    .pricing-box-head {
+        margin-bottom: 30px;
+
+        .h3-title {
+            margin-bottom: 10px;
+        }
+    }
+
+    .pricing-box-price {
+        color: var(--uc-white-color);
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+}
+
+
+
+
+.pricing-box-price .currency-before {
+    font-size: 25px;
+    line-height: 1.1;
+    margin-top: -20px;
+}
+
+.pricing-box-price .price {
+    font-size: clamp(60px, 4.7vw, 100px);
+    line-height: 1;
+    font-weight: bold;
+}
+
+.pricing-box-price .period {
+    margin-top: 32px;
+}
+
+.pricing-box-content {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.pricing-row [class*=col-]:nth-child(1) .pricing-box,
+.pricing-row [class*=col-]:nth-child(3) .pricing-box {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.pricing-row [class*=col-]:nth-child(1) .pricing-box {
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    transform-origin: left;
+}
+
+.pricing-row [class*=col-]:nth-child(3) .pricing-box {
+    -webkit-transform-origin: right;
+    -ms-transform-origin: right;
+    transform-origin: right;
+}
+
+.pricing-row .pricing-box.active {
+    background: rgba(var(--uc-white-light-color2-rgb), 0.15);
+    border-color: rgba(var(--uc-white-color-rgb), 0.6);
+}
+
+.pricing-box-tag {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 5px 10px;
+    font-size: 18px;
+    line-height: 1;
+    background: var(--uc-primary-color);
+    color: var(--uc-white-color);
+}
+
+.pricing-box-tag:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    border: 10px solid var(--uc-primary-color);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: none;
+}
+
+.pricing-box-bg {
+    background: rgba(var(--uc-secondary-color-rgb), 0.9);
+    border-color: rgba(var(--uc-secondary-color-rgb), 1);
+}
+
+.pricing-row .pricing-box.active.pricing-box-bg {
+    background: rgba(var(--uc-secondary-color-rgb), 1);
+    border-color: rgba(var(--uc-secondary-color-rgb), 1);
+}
+
+/*===== Pricing Plans End =====*/
