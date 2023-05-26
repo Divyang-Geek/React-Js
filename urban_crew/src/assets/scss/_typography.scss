@@ -69,9 +69,17 @@ h6 {
     text-transform: uppercase;
 }
 
-// .h4-title {
-//     @include font-size($h4_font_sizes);
-// }
+.h4-title {
+    @include font-size($h4_font_sizes);
+    color: var(--uc-secondary-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+body,
+p {
+    @include font-size($p_body_font_sizes);
+}
 
 // .h5-title {
 //     @include font-size($h5_font_sizes);

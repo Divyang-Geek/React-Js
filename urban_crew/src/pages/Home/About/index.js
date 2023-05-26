@@ -30,7 +30,7 @@ const About = () => {
                                         <p>I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. I feel the presence of the Almighty, who formed us in his own image, and the breath.</p>
                                     </div>
                                     <div className="sec-btn-wp mt-40">
-                                        <Button text="Read More" className="yellow-btn" url={"/about"} />
+                                        <Button text="Read More" className="yellow-btn" url="/about" />
                                     </div>
                                 </div>
                             </Col>

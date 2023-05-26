@@ -5,14 +5,14 @@ const VideoSec = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const videoRef = useRef(null);
 
-    const playBtn = (e) => {
-        videoRef.current.play();
+    const toggleBtn = () => {
         setIsPlaying(!isPlaying);
-    };
 
-    const pauseBtn = (e) => {
-        videoRef.current.pause();
-        setIsPlaying(!isPlaying);
+        if(!isPlaying){
+            videoRef.current.play();
+        } else {
+            videoRef.current.pause()
+        }
     };
 
     return (
@@ -20,12 +20,11 @@ const VideoSec = () => {
             <div className="main-video-sec">
                 <div className="sec-wp marginX-100">
                     <div className={`video-box overflow-hidden${isPlaying ? " activeVideo" : ""}`}>
-                        <div className="video-box-close-overlay" onClick={pauseBtn}></div>
-                        <div className="video-box-overlay"></div>
-                        <video muted loop className="w-100 d-flex" id="video" ref={videoRef}>
+                        <video muted loop className="w-100 d-flex" id="video" ref={videoRef} onClick={toggleBtn}>
                             <source src={videoSrc} type="video/mp4" />
                         </video>
-                        <div className="video-box-btn" onClick={playBtn}>
+                        {
+                            !isPlaying && <div className="video-box-btn" onClick={toggleBtn}>
                             <div className="video-box-btn-inr">
                                 <span className="video-box-btn--text">Play</span>
                                 <span className="video-box-btn--svg">
@@ -35,6 +34,8 @@ const VideoSec = () => {
                                 </span>
                             </div>
                         </div>
+                        }
+
                     </div>
                 </div>
             </div>

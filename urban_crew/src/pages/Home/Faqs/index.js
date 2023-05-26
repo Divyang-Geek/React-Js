@@ -20,7 +20,7 @@ const Faqs = () => {
 
     return (
         <>
-            <div className="main-faqs section">
+            <section className="main-faqs section">
                 <div className="sec-wp">
                     <Container>
                         <Row>
@@ -31,7 +31,7 @@ const Faqs = () => {
                             </Col>
                             <Col lg={5}>
                                 <div className="sec-title-btn">
-                                    <Button text="Read More" url="/faqs"></Button>
+                                    <Button text="Read More" url="/faqs" />
                                 </div>
                             </Col>
                         </Row>
@@ -65,7 +65,7 @@ const Faqs = () => {
                         </Row>
                     </Container>
                 </div>
-            </div>
+            </section>
         </>
     );
 };

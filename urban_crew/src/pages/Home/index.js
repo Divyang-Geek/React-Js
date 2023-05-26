@@ -8,6 +8,7 @@ import Team from "./Team";
 import Testimonial from "./Testimonial";
 import Faqs from "./Faqs";
 import Pricing from "./Pricing";
+import Blog from "./Blog";
 
 const Home = () => {
     return (
@@ -22,6 +23,7 @@ const Home = () => {
             <Testimonial />
             <Faqs />
             <Pricing />
+            <Blog />
         </>
     );
 };
