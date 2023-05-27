@@ -9,6 +9,7 @@ import Testimonial from "./Testimonial";
 import Faqs from "./Faqs";
 import Pricing from "./Pricing";
 import Blog from "./Blog";
+import Newsletter from "./Newsletter";
 
 const Home = () => {
     return (
@@ -24,6 +25,7 @@ const Home = () => {
             <Faqs />
             <Pricing />
             <Blog />
+            <Newsletter />
         </>
     );
 };

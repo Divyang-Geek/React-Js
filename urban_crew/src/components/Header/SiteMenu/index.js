@@ -4,8 +4,11 @@ import SidebarMenu from "./SidebarMenu";
 const SiteMenu = () => {
     const [show, setShow] = useState(false);
 
+    const html = document.querySelector("html");
+
     const sidebarShow = () => {
         setShow(true);
+        !show && html.classList.add("body-fixed");
     };
     return (
         <>
@@ -16,7 +19,7 @@ const SiteMenu = () => {
                         <span></span>
                     </button>
                 </div>
-                {/* <SidebarMenu show={show} setShow={setShow} /> */}
+                <SidebarMenu show={show} setShow={setShow}/>
             </div>
         </>
     );

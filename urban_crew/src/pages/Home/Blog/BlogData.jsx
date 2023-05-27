@@ -8,13 +8,33 @@ import blogImg6 from "../../../assets/images/blog-img6.jpg";
 const BlogData = [
     {
         id: 1,
-        title: "their government experience may be their credential",
-        category: ["Business", "Business2"],
+        title: "Their Government Experience May Be Their Credential",
+        category: ["Business"],
         meta: {
             author: "Urban Crew",
             date: "Sep 7th, 2020",
         },
         image: blogImg1,
+    },
+    {
+        id: 2,
+        title: "Extreme Athleticism Is The New Midlife Crisis",
+        category: ["Law", "Business"],
+        meta: {
+            author: "Urban Crew",
+            date: "Sep 5th, 2020",
+        },
+        image: blogImg2,
+    },
+    {
+        id: 3,
+        title: "The Day I Lost My Child In Charles De Gaulle Airport",
+        category: ["Consulting"],
+        meta: {
+            author: "Urban Crew",
+            date: "Sep 1th, 2020",
+        },
+        image: blogImg3,
     },
 ];
 

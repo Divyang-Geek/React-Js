@@ -35,7 +35,6 @@ const Blog = () => {
                                 {BlogData.map((data) => {
                                     const { id, title, meta, category, image } = data;
                                     const { author, date } = meta;
-                                    console.log(category);
                                     return (
                                         <Col lg={4} key={id}>
                                             <Lines className="blog-box">
@@ -52,7 +51,7 @@ const Blog = () => {
                                                     <div className="blog-box-content">
                                                         <span className="blog-box-category">
                                                             {category.map((data, index) => {
-                                                                return data + (index >= 0 ? ", " : "");
+                                                                return <span key={index}>{data + (index >= 0 ? "," : "")}</span>;
                                                             })}
                                                         </span>
                                                         <h4 className="h4-title">

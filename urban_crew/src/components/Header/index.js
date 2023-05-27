@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SiteBranding from "../Common/SiteBranding";
-import SiteNavigationLogo from "../Common/SiteNavigationLogo";
+import SiteLogo from "../Common/SiteLogo";
 import Menu from "../Common/Menu";
 import HeaderMenuData from "./HeaderMenuData";
 import SiteMenu from "./SiteMenu";
@@ -30,7 +30,7 @@ const Header = () => {
                         </Col>
                         <Col>
                             <div className="site-navigation-box">
-                                <SiteNavigationLogo className="site-navigation-logo" />
+                                <SiteLogo className="site-navigation-logo" />
                                 <div className="site-navigation">
                                     <Menu menuData={HeaderMenuData} />
                                 </div>

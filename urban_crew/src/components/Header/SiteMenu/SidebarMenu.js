@@ -1,9 +1,48 @@
-import SiteNavigationLogo from "../../Common/SiteNavigationLogo";
+import { Link } from "react-router-dom";
+import SiteLogo from "../../Common/SiteLogo";
+import { FaInstagram } from "react-icons/fa";
+import instaImg1 from "../../../assets/images/insta-img-1.jpg";
+import instaImg2 from "../../../assets/images/insta-img-2.jpg";
+import instaImg3 from "../../../assets/images/insta-img-3.jpg";
+import instaImg4 from "../../../assets/images/insta-img-4.jpg";
+import instaImg5 from "../../../assets/images/insta-img-5.jpg";
+import instaImg6 from "../../../assets/images/insta-img-6.jpg";
+import Social from "../../Common/Social";
 
 const SidebarMenu = ({ show, setShow }) => {
+    const html = document.querySelector("html");
+
     const sideBarHide = () => {
         setShow(false);
+        show && html.classList.remove("body-fixed");
     };
+
+    const InstagramData = [
+        {
+            id: 1,
+            image: instaImg1,
+        },
+        {
+            id: 2,
+            image: instaImg2,
+        },
+        {
+            id: 3,
+            image: instaImg3,
+        },
+        {
+            id: 4,
+            image: instaImg4,
+        },
+        {
+            id: 5,
+            image: instaImg5,
+        },
+        {
+            id: 6,
+            image: instaImg6,
+        },
+    ];
 
     return (
         <>
@@ -15,7 +54,7 @@ const SidebarMenu = ({ show, setShow }) => {
                         <span></span>
                     </button>
                     <div className="sidebar-menu-inr">
-                        <SiteNavigationLogo className="sidebar-menu-logo mb-40" />
+                        <SiteLogo className="sidebar-menu-logo mb-40" />
                         <div className="sidebar-search search-form mb-40">
                             <form
                                 onSubmit={(e) => {
@@ -32,126 +71,36 @@ const SidebarMenu = ({ show, setShow }) => {
                         <div className="sidebar-text mb-40">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto porro quia cum impedit praesentium veniam.</p>
                         </div>
-                        {/* <div className="sidebar-instagram mb-40">
+                        <div className="sidebar-instagram mb-40">
                             <h3 className="h3-title">Instagram</h3>
                             <div className="sidebar-insta-imgs">
-                                <div className="sidebar-insta-img">
-                                    <a
-                                        href="assets/images/insta-img-1.jpg"
-                                        data-fancybox="insta-img"
-                                    >
-                                        <img
-                                            src="assets/images/insta-img-1.jpg"
-                                            alt="insta-img"
-                                        />
-                                        <span className="sidebar-insta-img-overlay">
-                                            <i
-                                                className="fab fa-instagram"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div className="sidebar-insta-img">
-                                    <a
-                                        href="assets/images/insta-img-2.jpg"
-                                        data-fancybox="insta-img"
-                                    >
-                                        <img
-                                            src="assets/images/insta-img-2.jpg"
-                                            alt="insta-img"
-                                        />
-                                        <span className="sidebar-insta-img-overlay">
-                                            <i
-                                                className="fab fa-instagram"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div className="sidebar-insta-img">
-                                    <a
-                                        href="assets/images/insta-img-3.jpg"
-                                        data-fancybox="insta-img"
-                                    >
-                                        <img
-                                            src="assets/images/insta-img-3.jpg"
-                                            alt="insta-img"
-                                        />
-                                        <span className="sidebar-insta-img-overlay">
-                                            <i
-                                                className="fab fa-instagram"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div className="sidebar-insta-img">
-                                    <a
-                                        href="assets/images/insta-img-4.jpg"
-                                        data-fancybox="insta-img"
-                                    >
-                                        <img
-                                            src="assets/images/insta-img-4.jpg"
-                                            alt="insta-img"
-                                        />
-                                        <span className="sidebar-insta-img-overlay">
-                                            <i
-                                                className="fab fa-instagram"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div className="sidebar-insta-img">
-                                    <a
-                                        href="assets/images/insta-img-5.jpg"
-                                        data-fancybox="insta-img"
-                                    >
-                                        <img
-                                            src="assets/images/insta-img-5.jpg"
-                                            alt="insta-img"
-                                        />
-                                        <span className="sidebar-insta-img-overlay">
-                                            <i
-                                                className="fab fa-instagram"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div className="sidebar-insta-img">
-                                    <a
-                                        href="assets/images/insta-img-6.jpg"
-                                        data-fancybox="insta-img"
-                                    >
-                                        <img
-                                            src="assets/images/insta-img-6.jpg"
-                                            alt="insta-img"
-                                        />
-                                        <span className="sidebar-insta-img-overlay">
-                                            <i
-                                                className="fab fa-instagram"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </span>
-                                    </a>
-                                </div>
+                                {InstagramData.map((data) => {
+                                    const { id, image } = data;
+                                    return (
+                                        <div className="sidebar-insta-img" key={id}>
+                                            <Link>
+                                                <img src={image} alt="Instagram Img" />
+                                                <span className="sidebar-insta-img-overlay">
+                                                    <i>
+                                                        <FaInstagram />
+                                                    </i>
+                                                </span>
+                                            </Link>
+                                        </div>
+                                    );
+                                })}
                             </div>
-                        </div> */}
-                        {/* <div className="social blue-hover mb-40">
-                    <ul>
-                        <li><a href="javascript:void(0);" title="Follow On Facebook"><i className="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                        <li><a href="javascript:void(0);" title="Follow On Instagram"><i className="fab fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="javascript:void(0);" title="Follow On Twitter"><i className="fab fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="javascript:void(0);" title="Follow On Youtube"><i className="fab fa-youtube" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-                <div className="sidebar-copyright">
-                    <p>Copyright © 2023 <a href="https://themeforest.net/user/geekcodelab" title="GeekCodeLab" target="_blank">GeekCodeLab</a>.
-                        <span className="d-block">All Rights Reserved.</span>
-                    </p>
-                </div> */}
+                        </div>
+                        <Social className="blue-hover mb-40" />
+                        <div className="sidebar-copyright">
+                            <p>
+                                {`Copyright © 2023 `}
+                                <Link to="https://themeforest.net/user/geekcodelab" title="GeekCodeLab" target="_blank">
+                                    GeekCodeLab
+                                </Link>
+                                {`. All Rights Reserved.`}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
