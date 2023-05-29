@@ -1,21 +1,20 @@
 import BannerSlider from "./BannerSlider";
-import About from "./About";
+import AboutSec from "../../components/Common/AboutSec";
 import Services from "./Services";
-import VideoSec from "./VideoSec";
+import VideoSec from "../../components/Common/VideoSec";
 import WorkProcess from "./WorkProcess";
-import Counter from "./Counter";
-import Team from "./Team";
-import Testimonial from "./Testimonial";
 import Faqs from "./Faqs";
 import Pricing from "./Pricing";
-import Blog from "./Blog";
-import Newsletter from "./Newsletter";
+import Counter from "../../components/Common/Counter/";
+import Team from "../../components/Common/Team";
+import Testimonial from "../../components/Common/Testimonial";
+import Blog from "../../components/Common/Blog";
 
 const Home = () => {
     return (
         <>
             <BannerSlider />
-            <About />
+            <AboutSec />
             <Services />
             <VideoSec />
             <WorkProcess />
@@ -25,7 +24,6 @@ const Home = () => {
             <Faqs />
             <Pricing />
             <Blog />
-            <Newsletter />
         </>
     );
 };

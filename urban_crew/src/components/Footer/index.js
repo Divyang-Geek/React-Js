@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 import Menu from "../Common/Menu";
 import FooterMenuData from "./FooterMenuData";
 import ScrollTopButton from "../Common/ScrollTopButton";
+import Newsletter from "../Common/Newsletter";
 
 const Footer = () => {
+
     return (
         <>
+            <Newsletter />
             <footer className="site-footer secondary-bg">
                 <div className="sec-wp marginX-100">
                     <Container fluid className="p-0">

@@ -3,8 +3,11 @@ import SecTitle from "../../../components/Common/SecTitle";
 import Button from "../../../components/Common/Button";
 import rightArrowWhite from "../../../assets/images/right-arrow-white.svg";
 import ClientLogoSlider from "../../../components/Common/ClientLogoSlider";
+import { useLocation } from "react-router-dom";
 
 const Newsletter = () => {
+    const location = useLocation();
+
     return (
         <>
             <section className="main-newsletter section marginX-100">
@@ -37,7 +40,7 @@ const Newsletter = () => {
                                     </div>
                                 </Col>
                             </Row>
-                            <ClientLogoSlider />
+                            {location.pathname === "/" && <ClientLogoSlider />}
                         </div>
                     </Container>
                 </div>
