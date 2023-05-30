@@ -8,7 +8,7 @@ import About from "./pages/About";
 const App = () => {
     return (
         <>
-            <BrowserRouter basename="/urban-crew">
+            <BrowserRouter basename="/">
                 <BodyLines />
                 <Header />
                 <Routes>

@@ -22,7 +22,7 @@ const Newsletter = () => {
                                 </Col>
                                 <Col lg={5}>
                                     <div className="newsletter-right">
-                                        <p>Start Building Your Brand Today With The Best Branding Team, Let Us Give An Oppurtunity To Make Your Branding Better.</p>
+                                        <p>Start Building Your Brand Today With The Best Branding Team, Let Us Give An Opportunity To Make Your Branding Better.</p>
                                         <div className="newsletter-form">
                                             <form
                                                 onSubmit={(e) => {
