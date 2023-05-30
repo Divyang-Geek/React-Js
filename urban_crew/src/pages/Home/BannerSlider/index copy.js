@@ -2,10 +2,18 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Autoplay, EffectFade, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../../../components/Common/Button";
-import  BannerSliderData from "./BannerSliderData";
+import { BannerSliderData } from "./BannerSliderData";
 
 const BannerSlider = () => {
-
+    const SVG = ({ isHighlightNum }) => {
+        return (
+            <>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" preserveAspectRatio="none">
+                    <path d="M455,170 C392,148 24,163 9,165 C7,138 3,50 5,29 C28,25 461,-6 495,20 C494,44 493,137 492,150" style={{ "--uc-highlight-svg": isHighlightNum }}></path>
+                </svg>
+            </>
+        );
+    };
     return (
         <>
             <section className="main-banner marginX-100">
@@ -41,7 +49,17 @@ const BannerSlider = () => {
                                                     <div className="banner-content-wp">
                                                         <div className="banner-content white-text">
                                                             <div className="swiper-slide-x--cover swiper-slide-x--cover1">
-                                                                <h1 className="h1-title">{content}</h1>
+                                                                <h1 className="h1-title">
+                                                                    {content.map((data, index) => {
+                                                                        return data?.text?.isHighlight ? (
+                                                                            <span className="highlight-svg" key={index}>
+                                                                                {data?.text?.text} {data?.text?.isHighlight && <SVG isHighlightNum={index} />}
+                                                                            </span>
+                                                                        ) : (
+                                                                            data?.text?.text
+                                                                        );
+                                                                    })}
+                                                                </h1>
                                                             </div>
                                                             <div className="swiper-slide-x--cover swiper-slide-x--cover2">
                                                                 <Button text="Read More" className="yellow-btn" url={link} />

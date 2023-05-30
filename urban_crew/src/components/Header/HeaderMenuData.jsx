@@ -7,7 +7,7 @@ const HeaderMenuData = [
     {
         id: "2",
         title: "Pages",
-        link: "/",
+        link: { javascript: void 0 },
         submenu: [
             {
                 id: "2.1",

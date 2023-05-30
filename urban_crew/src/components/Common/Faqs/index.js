@@ -10,12 +10,11 @@ const Faqs = () => {
     const toggleEvent = (id) => {
         // console.log(id);
 
-        // if (isActive === id) {
-        //     setIsActive(null);
-        //     return false;
-        // }
-
-        setIsActive(id);
+        if (isActive === id) {
+            setIsActive(null);
+        } else {
+            setIsActive(id);
+        }
     };
 
     return (
@@ -44,7 +43,7 @@ const Faqs = () => {
                                         return (
                                             <div className="faq-box" key={id}>
                                                 <h3
-                                                    className={`${isActive === id ? " active" : ""}`}
+                                                    className={`${isActive === id ? "active" : ""}`}
                                                     onClick={() => {
                                                         toggleEvent(id);
                                                     }}
